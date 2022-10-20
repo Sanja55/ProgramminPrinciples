@@ -1,0 +1,2 @@
+var moodOfTheDay = ["It picks me up and puts me down again. I never know when my troubles will end. It makes me blue, but keeps me coming round. Life is cheap, a smile is free"];
+console.log(moodOfTheDay);
