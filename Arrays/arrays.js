@@ -10,7 +10,6 @@ console.log(months[9]);
 console.log(months[0]);
 
 
-
 /**2. Write an arrays of days in a week. Using console.log display Sunday from the array. */
 
 var weekDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
