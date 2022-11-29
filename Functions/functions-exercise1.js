@@ -98,15 +98,21 @@ console.log(arithmetic);
 
 function getTheNumberOfDigits(number) {
     
-    var i = 0;
+   var counterOfDigits = 0;
 
-    while (number !== 0)
+   if (number >= 1) { 
+    
+    counterOfDigits++;
+    
+    while (number / 10 > 1) {
+         
+        number = number / 10;
 
-    number = number / 10;
+        counterOfDigits++;
+    }
+  }
 
-    ++i;
-
-    return i;
+  return counterOfDigits;
 
 }
 
@@ -188,6 +194,29 @@ function getTheNumberOfAppearancesOfTheLetterA(givenString, letter) {
 var countAppearance = getTheNumberOfAppearancesOfTheLetterA("Fantazmagorija", "a");
 
 console.log(countAppearance);
+
+/******************Modify*****************/
+
+function findTheNumberOfAppearances(string) {
+
+    var letterCount = 0;
+
+    for (var i = 0; i < string.length; i++) {
+
+        if (string[i] === "a" && string[i] === "A") {
+
+            letterCount++
+
+        }
+    }  
+    
+    return letterCount;
+}
+ 
+var totalNumberOfLetters = findTheNumberOfAppearances ("AbrakadAbrA");
+
+ console.log(totalNumberOfLetters);
+
 
 
 /**11. Write a program that concatenates a given string given number of times. For
