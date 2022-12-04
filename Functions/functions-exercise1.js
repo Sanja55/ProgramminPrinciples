@@ -94,6 +94,49 @@ var arithmetic = calculatesArithmeticMean([10, 10, 10, 10, 10, 10, 10]);
 console.log(arithmetic);
 
 
+/**5. Write a program that draws a square of a given size. For example, if the size of
+square is 5 the program should draw:
+*****
+* *
+* *
+* *
+***** */
+
+function drawSquare(size) {
+
+    var square = "";
+    
+    for (var i = 0; i < size; i++) {
+
+        for (var j = 0; j < size; j++) {
+
+            if (i === 0 || i === size - 1 || j === 0 || j === size - 1) {
+
+                square += "*";
+            
+            } else {
+
+                square += " ";
+            }
+
+        }
+
+        if (i !== size - 1) {
+
+            square += "\n";
+        }
+            
+    }
+
+    return square;
+
+}
+
+var drawing = drawSquare (10);
+
+console.log(drawing);
+
+
 /**7. Write a program that calculates a number of digits of a given number. */
 
 function getTheNumberOfDigits(number) {
