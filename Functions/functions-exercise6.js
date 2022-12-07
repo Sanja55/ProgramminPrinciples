@@ -304,6 +304,39 @@ console.log(average);
 
 
 
+// Task 13. Write a function to find all the numbers greater than the average.
+
+function greaterThanAverage (array) {
+    
+    var sumOfElements = 0;
+
+    var averageOfElements = 0;
+
+    var elementsGreaterThanAverage = [];
+
+    for (var i = 0; i < array.length; i++) {
+        
+        sumOfElements += array[i];
+
+        averageOfElements = sumOfElements / array.length;
+    }
+    
+    for (var i = 0; i < array.length; i++) {
+        
+        averageOfElements = sumOfElements / array.length;
+        
+        if (array[i] > averageOfElements) {
+            
+            elementsGreaterThanAverage[elementsGreaterThanAverage.length] = array[i];        
+        }
+    }
+    return elementsGreaterThanAverage;
+}
+
+console.log(greaterThanAverage([3, 5, 7, 8, 12, 14, 17, 22]));
+
+
+
 
 
 
