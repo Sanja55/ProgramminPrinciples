@@ -157,7 +157,7 @@ function createProject(description, programmingLanguage, git, status) {
         
         printOutTheProjectGitRepository: function () {
             
-            console.log(project.gitRepository);
+            return project.gitRepository;
         },
         
         checkTheProgrammingLanguage: function () {
@@ -183,6 +183,15 @@ function createProject(description, programmingLanguage, git, status) {
     return project;
 }
 
+var newProject = createProject ("This project is about..", "JavaScript", "Sanja55", "Work in progress...")
+
+console.log(newProject);
+
+console.log(newProject.projectDevelopmentStatus);
+
+console.log(newProject.printOutTheProjectGitRepository());
+
+console.log(newProject.checkTheProgrammingLanguage());
 
 
 
@@ -309,19 +318,19 @@ function createTheRecipe (name, cuisine, complexity, ingredients, prepTime, prep
 
         printOutAllIngredients: function () {
 
-            console.log(culinaryRecipe.listOfIngredients);
+            return culinaryRecipe.listOfIngredients;
             
         },
 
-        checkMealPreparation: function () {
+        checkMealPreparation: function (prepTime) {
 
-            if (culinaryRecipe.preparationTime <= 15) {
+            if (prepTime <= 15) {
 
-                console.log(culinaryRecipe.name + "is easy to make!");
+                return culinaryRecipe.dishName + "is easy to make!";
             
             } else {
 
-                console.log("You will need a few extra moments to make " + culinaryRecipe.dishName);
+                return "You will need a few extra moments to make " + culinaryRecipe.dishName + "!";
             }
             
         },
@@ -329,19 +338,24 @@ function createTheRecipe (name, cuisine, complexity, ingredients, prepTime, prep
         changeTheTypeOfCuisine: function (newType) {
 
             culinaryRecipe.typeOfCuisine = newType;
+
+            return culinaryRecipe.typeOfCuisine;
         
         },
 
         removeIngredientFromTheList: function (ingredient) {
 
+            var newListOfIngredinets = [];
+
             for (var i = 0; i < culinaryRecipe.listOfIngredients.length; i++) {
 
-                if (culinaryRecipe.listOfIngredients[i] === ingredient) {
+                if (culinaryRecipe.listOfIngredients[i] !== ingredient) {
 
-                    delete culinaryRecipe.listOfIngredients[i];
+                    newListOfIngredinets[newListOfIngredinets.length] = culinaryRecipe.listOfIngredients[i];
                 }
             }
             
+            return newListOfIngredinets;
         }
 
 
@@ -350,6 +364,24 @@ function createTheRecipe (name, cuisine, complexity, ingredients, prepTime, prep
     return culinaryRecipe;
     
 }
+
+var dishMaker = createTheRecipe("Beetroot Falafel", "MiddleEastern, Lebanese", 3, ["Cheakpeas", "Beetroot", "Small Onion", "2 garlic cloves", "Lemon juice", "Bunch of parsley", "Coriander"], 60, "Prep method desription...")
+
+console.log(dishMaker);
+
+console.log(dishMaker.checkMealPreparation(60));
+
+console.log(dishMaker.removeIngredientFromTheList("Lemon juice"));
+
+console.log(dishMaker.changeTheTypeOfCuisine("Lebanese"));
+
+console.log(dishMaker.printOutAllIngredients());
+
+
+
+
+
+
 
 
 
