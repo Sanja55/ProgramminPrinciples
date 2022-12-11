@@ -365,17 +365,17 @@ function createTheRecipe (name, cuisine, complexity, ingredients, prepTime, prep
     
 }
 
-var dishMaker = createTheRecipe("Beetroot Falafel", "MiddleEastern, Lebanese", 3, ["Cheakpeas", "Beetroot", "Small Onion", "2 garlic cloves", "Lemon juice", "Bunch of parsley", "Coriander"], 60, "Prep method desription...")
+var newRecipe = createTheRecipe("Beetroot Falafel", "MiddleEastern, Lebanese", 3, ["Cheakpeas", "Beetroot", "Small Onion", "2 garlic cloves", "Lemon juice", "Bunch of parsley", "Coriander"], 60, "Prep method desription...")
 
-console.log(dishMaker);
+console.log(newRecipe);
 
-console.log(dishMaker.checkMealPreparation(60));
+console.log(newRecipe.checkMealPreparation(60));
 
-console.log(dishMaker.removeIngredientFromTheList("Lemon juice"));
+console.log(newRecipe.removeIngredientFromTheList("Lemon juice"));
 
-console.log(dishMaker.changeTheTypeOfCuisine("Lebanese"));
+console.log(newRecipe.changeTheTypeOfCuisine("Lebanese"));
 
-console.log(dishMaker.printOutAllIngredients());
+console.log(newRecipe.printOutAllIngredients());
 
 
 
