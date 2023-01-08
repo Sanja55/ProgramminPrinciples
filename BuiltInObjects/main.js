@@ -50,3 +50,61 @@ function removeAllDuplicatesFromTheArray (array) {
 var removeDuplicates =  removeAllDuplicatesFromTheArray ([8, 13, 8, 9, 12, 8, 1, 1, 4, 13]);
 
 console.log(removeDuplicates);
+
+
+/**3.
+a. Write a function that checks if a given array has odd number of elements.
+Input: [1, 2, 9, 2, 1]
+Output: true */
+
+function checkIfTheArrayHasOddNumberOfElements (array) {
+
+    if (array.length % 2 !== 0) {
+
+        return true;
+    
+    } else {
+
+        return false;
+    }
+}
+
+var oddNumberOfElements = checkIfTheArrayHasOddNumberOfElements ([1, 2, 9, 2, 1]);
+
+console.log(oddNumberOfElements);
+
+/*b. Write a function that counts the number of elements less than the middle
+element. If the given array has an even number of elements, print out an error
+message.
+Input: [-1, 8.1, 3, 6, 2.3, 44, 2.11]
+Output: 4*/
+
+function countTheNumberOfElementsLessThanTheMiddleElement (array) {
+
+    var elementCounter = 0;
+
+    if (array.length % 2 === 0) {
+
+        return "Error!"
+    
+    } else {
+
+        var middleElement = Math.ceil(array.length / 2);
+
+        for (var i = 0; i < array.length; i++) {
+
+            if (array[i] < middleElement) {
+
+                elementCounter++;
+            }
+        }
+
+    }
+
+    return elementCounter;
+
+}
+
+var elementsLessThanTheMiddleElement = countTheNumberOfElementsLessThanTheMiddleElement ([-1, 8.1, 3, 6, 2.3, 44, 2.11]);
+
+console.log(elementsLessThanTheMiddleElement);
