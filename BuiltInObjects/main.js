@@ -135,3 +135,187 @@ function findTheSmallestElementOfTheArray (array) {
 var theSmallestAndTheLastIndex = findTheSmallestElementOfTheArray ([1, 4, -2, 11, 8, 1, -2, 3]);
 
 console.log(theSmallestAndTheLastIndex);
+
+
+/**5.
+a. Write a function that finds all the elements in a given array less than a given
+element.
+Input: [2, 3, 8, -2, 11, 4], 6
+Output: [2, 3, -2, 4]*/
+
+function findAllTheElementsLessThanAGiven (array, elementToCompareWith) {
+
+    newArray = [];
+
+    for (var i = 0; i < array.length; i++) {
+
+        if (array[i] < elementToCompareWith) {
+
+            newArray.push(array[i]);
+        }
+    }
+
+    return newArray;
+
+}
+
+var elementsLessThanAGiven = findAllTheElementsLessThanAGiven ([2, 3, 8, -2, 11, 4], 6);
+
+console.log(elementsLessThanAGiven);
+
+
+/**b. Write a function that finds all the elements in a given array that start with the “pro”
+substring. The function should be case insensitive.
+Input: [’JavaScript’, ’Programming’, ’fun’, ’product’]
+Output: [’Programming’, ‘product’] */
+
+function findElementsStartWithThePro(array) {
+
+    var lowerCase = array.map( function (e) {
+
+        return e.toLowerCase();
+        
+    });
+    
+    var elementsContainingPro = lowerCase.filter(function (e) {
+
+        return e.includes("pro")
+        
+    });
+
+    return elementsContainingPro;
+    
+}
+
+var findPro = findElementsStartWithThePro (["JavaScript", "Programming", "fun", "product"]);
+
+console.log(findPro);
+
+
+/**c. Write a function that expects an array and a callback function that filters out
+some of the elements. Use functions defined in a) or b) to test it.*/
+
+/**6.
+a. Write a list (array) of products you usually buy in the supermarket. Write a price
+and name for each product. For example,
+[
+
+{name: ‘apples’, price: 100},
+{name: ‘milk’, price: 80},
+{name:’bananas’, price: 150}
+]*/
+
+var shoppingList = [
+
+    {name: "Chocolate", price: 150},
+
+    {name: "Potatoes", price: 100},
+
+    {name: "Avocado", price: 160},
+
+    {name: "Yogurt", price: 200},
+
+]
+
+/**b. Write a function that calculates the total price of your shopping list. */
+
+function calculateAltogether (shoppingList) {
+
+    var sumOfProducts = 0;
+
+    for (var i = 0; i < shoppingList.length; i++) {
+
+        sumOfProducts = sumOfProducts + shoppingList[i].price;
+
+    }
+
+    return sumOfProducts;
+
+}
+
+var billToPay = calculateAltogether([
+
+    {name: "Chocolate", price: 150},
+
+    {name: "Potatoes", price: 100},
+
+    {name: "Avocado", price: 160},
+
+    {name: "Yogurt", price: 200},
+
+]);
+
+console.log(billToPay);
+
+
+/**c. Write a function that calculates the average product price of your shopping list.
+Print this value with the precision of three decimals. */
+
+function calculateTheAveragePrice (shoppingList) {
+    
+    var sumOfProductPrices = 0
+
+    var averagePrice = 0;
+
+    for (var i = 0; i < shoppingList.length; i++) {
+
+        sumOfProductPrices += shoppingList[i].price;
+
+        averagePrice = sumOfProductPrices / shoppingList.length;
+    }
+
+    return averagePrice.toFixed(3);
+}
+  
+var averagePriceOfProducts = calculateTheAveragePrice ([
+
+    {name: "Chocolate", price: 150},
+
+    {name: "Potatoes", price: 100},
+
+    {name: "Avocado", price: 160},
+
+    {name: "Yogurt", price: 200},
+
+]);
+
+console.log(averagePriceOfProducts);
+
+
+/**d. Write a function that prints out the name of the most expensive product on your
+shopping list. Write the name in uppercase.*/
+
+function printTheMostExpensiveProduct (shoppingList) {
+
+    var theMostExpensive = 0;
+
+    for (var i = 0; i < shoppingList.length; i++) {
+
+        theMostExpensive = Math.max(shoppingList[i].price);
+
+    }
+
+    var theMostExpensiveProduct = shoppingList.find((element) => element.price === theMostExpensive);
+    
+    return theMostExpensiveProduct.name.toUpperCase();
+
+   
+    
+}
+
+var theMostExpensiveProductName = printTheMostExpensiveProduct ([
+
+    {name: "Chocolate", price: 150},
+
+    {name: "Potatoes", price: 100},
+
+    {name: "Avocado", price: 160},
+
+    {name: "Yogurt", price: 200},
+
+]);
+
+console.log(theMostExpensiveProductName);
+  
+
+
