@@ -108,3 +108,30 @@ function countTheNumberOfElementsLessThanTheMiddleElement (array) {
 var elementsLessThanTheMiddleElement = countTheNumberOfElementsLessThanTheMiddleElement ([-1, 8.1, 3, 6, 2.3, 44, 2.11]);
 
 console.log(elementsLessThanTheMiddleElement);
+
+/*4. Write a function that finds the smallest element of a given array. The function should
+return an object that contains the smallest value and its last position in the array.
+Input: [1, 4, -2, 11, 8, 1, -2, 3]
+Output: { minValue: -2, minLastIndex: 6 }*/
+
+function findTheSmallestElementOfTheArray (array) {
+
+    var theSmallestElement = array[0];
+
+    for (var i = 0; i < array.length; i++) {
+
+        if (theSmallestElement > array[i]) {
+
+            theSmallestElement = array[i];
+        
+        }
+    
+    }
+
+    return {minValue: theSmallestElement, minLastIndex: array.lastIndexOf(theSmallestElement)};
+    
+}
+
+var theSmallestAndTheLastIndex = findTheSmallestElementOfTheArray ([1, 4, -2, 11, 8, 1, -2, 3]);
+
+console.log(theSmallestAndTheLastIndex);
