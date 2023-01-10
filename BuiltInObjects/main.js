@@ -316,6 +316,132 @@ var theMostExpensiveProductName = printTheMostExpensiveProduct ([
 ]);
 
 console.log(theMostExpensiveProductName);
+
+
+/**7.
+a. Write a function that checks if a given string is written in all capitals.*/
   
+function checkForAllCapitals(string) {
+
+    if(string.toUpperCase() === string) {
+
+        return true;
+    
+    } else {
+
+        return false;
+    }
+    
+}
+
+var stringContainsAllCapitals = checkForAllCapitals ("SANJA RandjELOVic");
+
+console.log(stringContainsAllCapitals);
+
+
+//b. Write a function that checks if a given string contains any digits.
+
+function checkForDigits (string) {
+  
+    for (var i = 0; i < string.length; i++) {
+        
+        var element = string[i];
+        
+        var parsed = parseInt(element);
+        
+        if (!isNaN(parsed)) {
+
+            return true;
+        } 
+    }
+
+    return false;
+
+}
+
+var anyDigits = checkForDigits ("Da nas.1");
+
+console.log(anyDigits);
+
+
+//c. Write a function that checks if a given string is a valid hexadecimal color.
+
+//proveri da li je # na prvom mestu
+//da li je input length = 7
+//a-f i 0-9
+
+function checkIfStringIsValidHexColor (string) {
+
+    if (string[0] !== "#" && string.length !== 7) {
+
+        throw new Error ("Invalid input. Try Again!");
+    }
+
+   for (var i = 0; i < 7; i++) {
+
+        var character = string[i];
+
+        if ((character >= "0" || character <= "9") && 
+        
+            (character >= "A" || character <= "F" || character >= "a" || character <= "f")) {
+
+            return true;
+        }
+   }
+
+   return false;
+
+}
+
+var isStringValidHexColor = checkIfStringIsValidHexColor ("#af33ff");
+
+console.log(isStringValidHexColor);
+
+/**d. Write a function that checks if a given number belongs to the interval from 1900
+to 2018.*/
+
+function checkIfNumberIsInRange (number, low, high) {
+
+    if (number > low && number < high) {
+
+        return true;
+    
+    } else {
+
+        return false;
+    }
+} 
+
+var inRange = checkIfNumberIsInRange (1993, 1900, 2018);
+
+console.log(inRange);
+
+/**e. Write a function named validator that returns an object with properties
+stringValidator, passwordValidator, colorValidator, and yearValidator referencing
+the functions from a) to d). */
+
+function Validator (string, password, color, year) {
+
+    this.stringValidator = checkForAllCapitals(string);
+    this.passwordValidator = checkForDigits(password);
+    this.colorValidator = checkIfStringIsValidHexColor(color);
+    this.yearValidator = checkIfNumberIsInRange(year);
+
+}
+
+var validation = new Validator ("SANJA", "Da nas.1", "#AF3FF", 1993);
+
+console.log(validation);
+
+
+/**8. Write a function that calculates a number of days to your birthday.
+
+Input: 25 February
+Output: 5 days */
+
+function countTheDaysTillBirthday () {
+
+
+}
 
 
