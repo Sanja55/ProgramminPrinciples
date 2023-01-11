@@ -439,9 +439,21 @@ console.log(validation);
 Input: 25 February
 Output: 5 days */
 
-function countTheDaysTillBirthday () {
 
+function countTheDaysTillBirthday (currentDate, birthday) {
+
+    var currentDate = new Date();
+
+    var birthday = new Date("6/19/2023");
+
+    var differenceBetweenDates = birthday.getTime() - currentDate.getTime();
+
+    var daysLeftTillBirthday = Math.ceil(differenceBetweenDates / (1000 * 3600 * 24));
+
+    return daysLeftTillBirthday;
 
 }
+
+console.log(countTheDaysTillBirthday());
 
 
