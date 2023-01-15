@@ -400,9 +400,9 @@ console.log(isStringValidHexColor);
 /**d. Write a function that checks if a given number belongs to the interval from 1900
 to 2018.*/
 
-function checkIfNumberIsInRange (number, low, high) {
+function checkIfNumberIsInRange (number) {
 
-    if (number > low && number < high) {
+    if (number > 1900 && number < 2018) {
 
         return true;
     
@@ -412,7 +412,7 @@ function checkIfNumberIsInRange (number, low, high) {
     }
 } 
 
-var inRange = checkIfNumberIsInRange (1993, 1900, 2018);
+var inRange = checkIfNumberIsInRange (1993);
 
 console.log(inRange);
 
@@ -456,4 +456,12 @@ function countTheDaysTillBirthday (currentDate, birthday) {
 
 console.log(countTheDaysTillBirthday());
 
+/**9. Write a function that for a given departure and arrival time calculates the time the trip
+takes.
+Input: 8:22:13 11:43:22
+Output: 3 hours 21 minutes 9 seconds*/
 
+function calculateTripDuration (departureTime, arrivalTime) {
+
+    var departureTime = new Date()
+}
