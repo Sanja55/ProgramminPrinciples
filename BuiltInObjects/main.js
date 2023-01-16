@@ -464,4 +464,63 @@ Output: 3 hours 21 minutes 9 seconds*/
 function calculateTripDuration (departureTime, arrivalTime) {
 
     var departureTime = new Date()
+    
 }
+
+
+//11. a. Write a function that generates a random integer value between 5 and 20.
+
+function generateRandom (min, max) {
+
+    var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    return randomNumber;
+}
+var generatedRandomNumber = generateRandom(5, 20);
+console.log(generatedRandomNumber);
+
+
+//b. Write a function that generates a random integer value between 50 and 100.
+
+function generateTheNumber () {
+    
+    var minimum = 50;
+    var maximum = 100
+    var randomIneger = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+    
+    return randomIneger;
+}
+var generatedInteger = generateTheNumber (50, 100);
+console.log(generatedInteger);
+
+/*c. Write a function which expects a number and a callback generator function and
+returns an array of numbers produced by the generator function. */
+
+function generateTheArray(number, callback) {
+
+    var array = [];
+
+    for (var i = 0; i < number; i++) {
+        array.push(Math.floor(Math.random() * number));
+    }
+    return array
+}
+var generatedArray = generateTheArray(10, function (element) {return element * 2;})
+console.log(generatedArray);
+
+
+
+/**12. Write a function that shuffles the elements of a given array.
+
+Input: [3, 6, 11, 2, 9, 1] */
+
+function shuffleTheArray (array) {
+    for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array;
+  }
+var shuffledArray = shuffleTheArray ([3, 6, 11, 2, 9, 1])
+console.log(shuffledArray);
