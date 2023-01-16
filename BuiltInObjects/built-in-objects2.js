@@ -65,6 +65,41 @@ function alphabetizeWords (string) {
 var alphabetized = alphabetizeWords ("Republic Of Serbia");
 console.log(alphabetized);
 
+/**4. Write a function to split a string and convert it into an array of words.
+"John Snow" -> [ "John", "Snow" ] */
+
+function convertAStringToAnArray (string) {
+
+    var stringToArray = string.split("");
+    var john = stringToArray.slice(0, 4).join("");
+    var snow = stringToArray.slice(5).join("");
+    var converted = [];
+    converted[0] = john;
+    converted[1] = snow;
+    return converted;
+}
+
+var convertedString = convertAStringToAnArray ("John Snow");
+console.log(convertedString);
+
+/**5. Write a function to convert a string to its abbreviated form.
+"John Snow" ->; "John S." */
+
+function convertAStringToAbbreviatedForm (string) {
+
+    var stringToArray = string.split(" ");
+    var john = stringToArray[0];
+    var snow = stringToArray[1].split("");
+    var abbreviatedSnow = snow[0];
+    var abbreviated = [];
+    abbreviated[0] = john;
+    abbreviated[1] = abbreviatedSnow;
+    return abbreviated.join(" ") + ".";
+}
+
+var abbreviatedForm = convertAStringToAbbreviatedForm ("John Snow");
+console.log(abbreviatedForm);
+
 
 
 
