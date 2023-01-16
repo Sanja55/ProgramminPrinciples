@@ -104,13 +104,7 @@ console.log(abbreviatedForm);
 "0000", "123", "l" == "0123"
 "00000000", "123", "r" == "12300000"*/
 
-function addStringToTheLeftOrRight (stringOne, stringTwo, side) {
 
-    if (side === "left") {
-
-
-    }
-}
 
 /**7. Write a function to capitalize the first letter of a string and returns modified string.
 "js string exercises" -> "Js string exercises"*/
@@ -142,9 +136,25 @@ var hideEmail = hideEmailAddress ("somerandomaddress@example.com");
 console.log(hideEmail);
 
 /**9. Write a program that accepts a string as input and swaps the case of each character. For
-example, if you input &#39;The Quick Brown Fox&#39;, the output should be &#39;tHE qUICK bROWN fOX&#39;.
-var UPPER = &#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;;
-var LOWER = &#39;abcdefghijklmnopqrstuvwxyz&#39;;
-&quot;The Quick Brown Fox&quot; -&gt; &quot;tHE qUICK bROWN fOX&quot; */
+example, if you input "The Quick Brown Fox", the output should be "tHE qUICK bROWN fOX".
+var UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var LOWER = "abcdefghijklmnopqrstuvwxyz";
+"The Quick Brown Fox" -> "tHE qUICK bROWN fOX" */
+
+function swapTheCaseOfEachCharacter (string) {
+
+   var newString = "";
+
+    for (var i = 0; i < string.length; i++) {
+        if(string[i] === string[i].toUpperCase()) {
+            newString += string[i].toLowerCase()
+        } else {
+            newString += string[i].toUpperCase();
+        }
+    }
+    return newString;
+}
+var swapTheCases = swapTheCaseOfEachCharacter("The Quick Brown Fox");
+console.log(swapTheCases);
 
 
