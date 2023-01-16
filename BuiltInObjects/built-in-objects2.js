@@ -32,3 +32,39 @@ function returnLettesInAlphabeticalOrder (string) {
 }
 var alphabeticalOrder = returnLettesInAlphabeticalOrder ("Webmaster");
 console.log(alphabeticalOrder);
+
+/**3. Write a function to alphabetize words of a given string. Alphabetizing a string means
+rearranging the letters so they are sorted from A to Z.
+"Republic Of Serbia" -> "Rbceilpu Of Sabeir" */
+
+function alphabetizeWords (string) {
+
+    var stringToArray = string.split("");
+    var firstLetter = stringToArray.shift();
+    var firstWordSliced = stringToArray.slice(1, 7);
+    var firstWordSorted = firstWordSliced.sort();
+    var secondWordSliced = stringToArray.slice(7, 12);
+    var thirdWordSliced = stringToArray.slice(12);
+    var thirdWordSorted = thirdWordSliced.sort();
+    var alphabetize = [];
+    alphabetize.push(firstLetter);
+    
+    for (var i = 0; i < firstWordSorted.length; i++) {
+        alphabetize.push(firstWordSorted[i])
+       
+    }
+    for (var j = 0; j < secondWordSliced.length; j++) {
+        alphabetize.push(secondWordSliced[j]);
+    }
+   
+    for(k = 0; k < thirdWordSorted.length; k++) {
+        alphabetize.push(thirdWordSorted[k]);
+    }
+    return alphabetize.join("");
+}
+var alphabetized = alphabetizeWords ("Republic Of Serbia");
+console.log(alphabetized);
+
+
+
+
