@@ -83,7 +83,7 @@ var convertedString = convertAStringToAnArray ("John Snow");
 console.log(convertedString);
 
 /**5. Write a function to convert a string to its abbreviated form.
-"John Snow" ->; "John S." */
+"John Snow" -> "John S." */
 
 function convertAStringToAbbreviatedForm (string) {
 
@@ -100,6 +100,51 @@ function convertAStringToAbbreviatedForm (string) {
 var abbreviatedForm = convertAStringToAbbreviatedForm ("John Snow");
 console.log(abbreviatedForm);
 
+/**6. Write a function that adds string to the left or right of string, by replacing it’s characters.
+"0000", "123", "l" == "0123"
+"00000000", "123", "r" == "12300000"*/
 
+function addStringToTheLeftOrRight (stringOne, stringTwo, side) {
+
+    if (side === "left") {
+
+
+    }
+}
+
+/**7. Write a function to capitalize the first letter of a string and returns modified string.
+"js string exercises" -> "Js string exercises"*/
+
+function capitalizeTheFirstLetter(string) {
+
+    var firstLetter = string.charAt(0);
+    var capitalized = firstLetter.toUpperCase() + string.slice(1);
+    return capitalized;
+
+}
+var capitalize = capitalizeTheFirstLetter ("js string exercises");
+console.log(capitalize);
+
+/**8. Write a function to hide email addresses to protect them from unauthorized users.
+"somerandomaddress@example.com"-> "somerand...@example.com"*/
+
+function hideEmailAddress (string) {
+    
+    var splitted = string.split("");
+    var firstPart = splitted.slice(0, 8).join("");
+    var hiddenPart = "...";
+    var secondPart = splitted.slice(17).join("");
+    
+    return firstPart + hiddenPart + secondPart;
+
+}
+var hideEmail = hideEmailAddress ("somerandomaddress@example.com");
+console.log(hideEmail);
+
+/**9. Write a program that accepts a string as input and swaps the case of each character. For
+example, if you input &#39;The Quick Brown Fox&#39;, the output should be &#39;tHE qUICK bROWN fOX&#39;.
+var UPPER = &#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;;
+var LOWER = &#39;abcdefghijklmnopqrstuvwxyz&#39;;
+&quot;The Quick Brown Fox&quot; -&gt; &quot;tHE qUICK bROWN fOX&quot; */
 
 
