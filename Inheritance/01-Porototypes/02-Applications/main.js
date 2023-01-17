@@ -75,13 +75,24 @@ MobileApp.prototype.forAndroid = function () {
     }
 }
 
-var webApp = new WebApp("Space Invaders", "www.google.com", "React", "CC", 3);
+var webApp = new WebApp("Google ext", "www.google.com", "React", "CC", 3);
 console.log(webApp);
 console.log(webApp.getData());
 console.log(webApp.rating);
+console.log(webApp.technologies);
+console.log(webApp.reactBased());
 console.log(webApp.like());
 console.log(webApp.showStars());
 console.log(webApp.constructor);
+
+var mobileApp = new MobileApp("Space Invaders", "Android", "BB", 2);
+console.log(mobileApp);
+console.log(mobileApp.getData());
+console.log(mobileApp.forAndroid());
+console.log(mobileApp.like());
+console.log(mobileApp.showStars());
+console.log(mobileApp.constructor);
+
 
 
 
