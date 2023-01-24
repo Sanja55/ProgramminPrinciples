@@ -37,6 +37,7 @@ function addMovieToList () {
     if (!inputTitleValue || !inputLengthValue || !genreValue) {
         errorMovieParagraph.textContent = "All fields are required!"
         errorMovieParagraph.style.color = "red";
+        return;
     }
 
     errorMovieParagraph.textContent = "";
@@ -49,9 +50,9 @@ function addMovieToList () {
     movieList.appendChild(movieListItem);
 
     
-    inputMovieTitle.value = " ";
-    inputMovieLength.value = " ";
-    selectGenre.value = "--";
+    inputMovieTitle.value = "";
+    inputMovieLength.value = "";
+    selectGenre.value = "";
 
     var movieOption = document.createElement("option");
     movieOption.textContent = movie.getData();
@@ -67,8 +68,8 @@ function addProgram () {
     console.log(dateInputValue);
 
     if (!dateInputValue) {
-        errorMovieToProgram.textContent = "Date is required!";
-        errorMovieToProgram.style.color = "red";
+        errorProgramParagraph.textContent = "Date is required!";
+        errorProgramParagraph.style.color = "red";
         return;
     }
 
@@ -96,6 +97,7 @@ function finalAdd() {
 
     var movieListIndex = selectMovieList.value;
     var programListIndex = selectProgramList.value; 
+    console.log({value: movieListIndex});
 
     if (!movieListIndex || !programListIndex) {
 
