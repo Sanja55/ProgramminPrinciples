@@ -97,12 +97,12 @@ function finalAdd() {
 
     var movieListIndex = selectMovieList.value;
     var programListIndex = selectProgramList.value; 
-    console.log({value: movieListIndex});
+    //console.log({value: movieListIndex});
 
     if (!movieListIndex || !programListIndex) {
 
         errorMovieToProgram.textContent = "Invalid selection!";
-        errorMovieToProgram.style.color = "red";
+        //errorMovieToProgram.style.color = "red";
         return;
     }
 
@@ -112,7 +112,7 @@ function finalAdd() {
     program.addMovie(movie);
 
     var finalAddListItem = document.createElement("li");
-    finalAddListItem.setAttribute("class", "porgram-item-" + programListIndex);
+    finalAddListItem.setAttribute("class", "program-item-" + programListIndex);
     finalAddListItem.textContent = program.getData() + movie.getData();
     finalAddProgramList.appendChild(finalAddListItem);
 

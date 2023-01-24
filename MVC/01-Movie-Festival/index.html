@@ -12,7 +12,7 @@
     <h1>Movie Festival</h1>
     <div class="container">
         
-        <p>Please, fill in the form:</p>
+        <h2>Please, fill in the form:</h2>
 
         <h3>Movie</h3>
         
@@ -27,7 +27,7 @@
                 <input type="text" id="movie-length" placeholder="Movie Length in Mins">
 
                 <select name="genre" id="genre">
-                    <option value="">--</option>
+                    <option value="">-Select-</option>
                     <option value="sci-fi">Sci-Fi</option>
                     <option value="action">Action</option>
                     <option value="adventure">Adventure</option>
@@ -37,15 +37,16 @@
 
                 <input type="button" class="button" id="create-movie-button" value="Create Movie" form="movie-form">
 
-            </form>
-
-            
-
+                
             <p class="error-movie-paragraph"></p>
-            
+
             <ul class="movie-list">
 
             </ul>
+
+            </form>
+
+            
         </div>
 
         <h3>Program</h3>
@@ -70,13 +71,14 @@
 
             <label for="">Movie:</label>
             <select name="movie" id="select-movie-list">
-                <option value="">--</option>
+                <option value="">-Select-</option>
             </select>
 
             <label for="">Program:</label>
             <select name="program" id="select-program-list">
-                <option value="">--</option>
+                <option value="">-Select-</option>
             </select>
+            
             <input type="button" class="button" id="add-movie-button" value="Add Movie To Program" form="program-form">
 
             <p class="error-movie-to-program"></p>
