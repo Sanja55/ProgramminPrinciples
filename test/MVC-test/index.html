@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/main.css">
+    <title>MVC - Movie Festival</title>
+</head>
+<body>
+    
+    <h1>Movie Festival</h1>
+    <div class="container">
+        
+        <h2>Please, fill in the form:</h2>
+
+        <h3>Movie</h3>
+        
+        <div id="movies-container">
+            
+            <form action="" id="movie-form">
+                
+                <label for="title">Title: </label> 
+                <input type="text" id="movie-title" placeholder="Movie Title"> 
+
+                <label for="length">Length (mins): </label>
+                <input type="text" id="movie-length" placeholder="Movie Length in Mins">
+
+                <select name="genre" id="genre">
+                    <option value="">- Select -</option>
+                    <option value="sci-fi">Sci-Fi</option>
+                    <option value="action">Action</option>
+                    <option value="adventure">Adventure</option>
+                    <option value="drama">Drama</option>
+                    <option value="Thriller">Thriller</option>
+                </select>
+
+                <input type="button" class="button" id="create-movie-button" value="Create Movie" form="movie-form">
+
+                
+            <p id ="add-movie-error"></p>
+
+            <ul class="movie-list">
+
+            </ul>
+
+            </form>
+
+            
+        </div>
+
+        <h3>Program</h3>
+
+        <div id="program-container">
+
+            <form action="">
+                
+                <label for="">Date</label>
+                <input type="date" name="date" id="program-date">
+                <input type="button" class="button" id="create-program-button" value="Create Program" form="program-form">
+
+                
+                <p id="add-movie-to-program-error"></p>
+
+                <ul class="program-list">
+
+                </ul>
+            
+            </form>
+
+
+            <label for="">Movie:</label>
+            <select name="movie" id="select-movie-list">
+                <option value="">- Select -</option>
+            </select>
+
+            <label for="">Program:</label>
+            <select name="program" id="select-program-list">
+                <option value="">- Select -</option>
+            </select>
+            
+            <input type="button" class="button" id="add-movie-button" value="Add Movie To Program" form="program-form">
+
+            <p class="error-movie-to-program"></p>
+
+            <ul class="final-add-program-list">
+
+            </ul>
+
+        </div>
+    </div>
+
+    <script src="./JS/data.js"></script>
+    <script src="./JS/ui.js"></script>
+    <script src="./JS/app.js"></script>
+    
+
+    
+</body>
+</html>
