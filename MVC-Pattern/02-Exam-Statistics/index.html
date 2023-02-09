@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/main.css">
+    <title>MVC</title>
+</head>
+<body>
+    
+    <div class="container">
+        
+        <div class="header">
+            
+            <h1>Exam Statistics June</h1>
+            <h3 id="student-count">Total Students: <span id="count"></span> <span id="percentage"></span></h3>
+
+            <div class="statistics">
+                <div class="exam-passed">PASSED<span class="count-passed"></span></div>
+                <div class="exam-failed">FAILED <span class="count-failed"></span><span class="percents"></span></div>
+            </div>
+        </div>
+
+        <div class="selection-and-inputs">
+            
+            <select name="" id="programming-languages">
+                
+                <option value="">Select Subject</option>
+                <option value="JAVA">JAVA</option>
+                <option value="C#">C#</option>
+                <option value="Ruby on Rails">Ruby On Rails</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Swift">Swift</option>
+                <option value="PHP">PHP</option>
+            
+            </select>
+
+            <input type="text" placeholder="Name and Surname" id="name">
+
+            <select name="" id="grades">
+                
+                <option value="">Select Grade</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            
+            </select>
+
+            <input type="button" value="ADD" id="add-button">
+
+        </div>
+
+        <p id="input-error"></p>
+
+        <div id="charts">
+            
+            <div id="passed-chart">
+                <p id="passed-title">PASSED</p>
+                <ul id="passed-list"></ul>
+            </div>
+            
+            <div id="failed-chart">
+                <p id="failed-title">FAILED</p>
+                <ul id="failed-list"></ul>
+            </div>
+        
+        </div>
+
+    </div>
+
+
+    <script src="./JS/subject.js"></script>
+    <script src="./JS/student.js"></script>
+    <script src="./JS/exam.js"></script>
+    <script src="./JS/form.js"></script>
+    <script src="./JS/app.js"></script>
+</body>
+</html>
