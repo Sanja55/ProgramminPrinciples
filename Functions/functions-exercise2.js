@@ -128,32 +128,25 @@ console.log(findThePosition);
 result should be in human numeration form. If there are no occurrences of the character,
 function should return -1. */
 
-/*function findThePositionOfTheLastOccurance (stringName, character) {
+function findThePositionOflastOccurence(string, character) {
 
-    var lastOccuranceOfCharacter = -1;
-
-    for (var i = stringName.length-1; i >= 0; i--) {
-
-        if (stringName[i] === character) {
-
-            lastOccuranceOfCharacter =  -1;
-
-            return lastOccuranceOfCharacter;
+    for (var i = 0; i < string.length; i++) {
         
-        } else if (stringName[i] === 0) {
-
-            return lastOccuranceOfCharacter = -1;
-        }
-    
+        if (string[string.length - i] === character) {
+            
+            return (string.length - i + 1)
     }
 
-    return lastOccuranceOfCharacter;
+    } if (string[i]!== character) {
+    
+        return -1
+    }
 
 }
 
-var lastOccurance = findThePositionOfTheLastOccurance("Sanja", "a");
+var lastOccurence = findThePositionOflastOccurence("garam masala", "a");
 
-console.log(lastOccurance);*/
+console.log(lastOccurence);
 
 /**7. Write a function to convert string into an array. Space in a string should be represented as
 “null” in new array. */
