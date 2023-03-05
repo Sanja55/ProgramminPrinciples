@@ -137,6 +137,41 @@ var drawing = drawSquare (10);
 console.log(drawing);
 
 
+/**6. Write a program that draws a horizontal chart representing three given values.
+For example, if values are 5, 3, and 7, the program should draw:
+* * * * *
+* * *
+* * * * * * * */
+
+function drawHorizontalChart (a, b, c) {
+    
+    var drawing = "";
+
+    for (var i = 0; i < a; i++) {
+        
+        drawing += "*"; }   
+    
+        if (i !== a - 1) drawing += "\n";  
+
+    for (var j = 0; j < b; j++) {
+        
+        drawing += "*"; }
+    
+        if (j !== b - 1) drawing += "\n";
+
+    for (var k = 0; k < c; k++) {
+        
+        drawing += "*";
+    }
+        
+    return drawing;
+}
+
+var horizontalChart = drawHorizontalChart(4, 11, 7);
+
+console.log(horizontalChart);
+
+
 /**7. Write a program that calculates a number of digits of a given number. */
 
 function getTheNumberOfDigits(number) {
