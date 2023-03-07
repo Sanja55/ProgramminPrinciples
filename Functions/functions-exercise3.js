@@ -101,3 +101,67 @@ var reversingTheNumber = numberReversing(1234567);
 
 console.log(reversingTheNumber);
 
+
+/**5. Write a function to get the last element of an array. Passing a parameter &#39;n&#39; will return the
+last &#39;n&#39; elements of the array.
+[7, 9, 0, -2] -> -2
+[7, 9, 0, -2], 2 -> [0, -2] */
+
+function getTheLastElementOfAnArray (inputArray, numberOfLastElements) {
+
+    var arrayOfLastElements = [];
+
+    for (var i = 0; i < inputArray.length; i++) { 
+
+        if ( numberOfLastElements > 0) {
+            
+            arrayOfLastElements += inputArray[inputArray.length - numberOfLastElements];
+
+            numberOfLastElements--;
+            
+            }
+
+    }
+        
+    return arrayOfLastElements;
+
+}
+
+//var lastElements = getTheLastElementOfAnArray([7, 9, 0, -2], 1);
+
+var lastElements = getTheLastElementOfAnArray([7, 9, 0, -2], 2)
+
+console.log(lastElements);
+
+
+/**6. Write a function to create a specified number of elements with pre-filled numeric value
+array.
+6, 0 -> [0, 0, 0, 0, 0, 0]
+2, "none" -> ["none", "none"]
+2 -> [null, null] */
+
+function createSpecifiedNumberOfElements(element, repetition) {
+    
+    var resultArray= [];
+    
+    for (var i = 0; i < element; i++) {
+      
+        if (typeof repetition === "undefined") {
+        
+        resultArray[resultArray.length] = null
+      
+        } else {
+        
+            resultArray[resultArray.length] = repetition;
+      }
+    }
+    return resultArray;
+  }
+  
+  //var specifiedNumberOfElements = createSpecifiedNumberOfElements(6, 0);
+
+  //var specifiedNumberOfElements = createSpecifiedNumberOfElements(2, "none");
+
+  var specifiedNumberOfElements = createSpecifiedNumberOfElements(2);
+  
+  console.log(specifiedNumberOfElements);
