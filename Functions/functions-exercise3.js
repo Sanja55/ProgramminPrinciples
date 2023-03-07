@@ -165,3 +165,170 @@ function createSpecifiedNumberOfElements(element, repetition) {
   var specifiedNumberOfElements = createSpecifiedNumberOfElements(2);
   
   console.log(specifiedNumberOfElements);
+
+
+/**7. Write a function that says whether a number is perfect.
+28 -> 28 is a perfect number.
+Note: According to Wikipedia: In number theory, a perfect number is a positive integer that is equal to the sum
+of its proper positive divisors, that is, the sum of its positive divisors excluding the number itself (also known
+as its aliquot sum). Equivalently, a perfect number is a number that is half the sum of all of its positive divisors
+(including itself).
+E.g.: The first perfect number is 6, because 1, 2 and 3 are its proper positive divisors, and 1 + 2 + 3 = 6.
+
+Equivalently, the number 6 is equal to half the sum of all its positive divisors: (1 + 2 + 3 + 6) / 2 = 6. The next
+perfect number is 28 = 1 + 2 + 4 + 7 + 14. This is followed by the perfect numbers 496 and 8128. */
+
+
+function isPerfect(number) {
+
+    var temp = 0;
+   
+    for(var i = 1; i <= number / 2; i++) {
+         
+        if(number % i === 0) {
+            
+            temp += i;
+          
+        }
+     }
+   
+     if(temp === number && temp !== 0) {
+       
+        console.log("It is a perfect number.");
+        
+    } else {
+       
+        console.log("It is not a perfect number.");
+    }   
+ } 
+
+ isPerfect(28); 
+
+
+ /** 8. Write a function to find a word within a string.
+'The quick brown fox', 'fox' -> "'fox' was found 1 times"
+'aa bb cc dd', 'aa' -> "'aa' was found 2 times"  */
+
+function findWord(string, word) {
+    
+    var array = [];
+    
+    var count = 0;
+    
+    array[0] = "";
+    
+    var times = 0;
+    
+    var output = "";
+    
+    for (var i = 0; i < string.length; i++) {
+      
+        if (string[i] === " " || string[i] === ",") {
+        
+            count++;
+        
+            array[count] = "";
+      
+        } else {
+        
+            array[count] += string[i];
+        }
+    }
+    
+    for (var j = 0; j < array.length; j++) {
+      
+        if (array[j] === word) {
+         
+            times++
+      }
+    
+    } 
+    
+    if (times > 1) {
+      
+        output = " times"
+    
+    } else {
+      
+        output = " time"
+    }
+    
+    return word + " was found " + times + output;  
+  
+}
+  
+   
+var findTheWord = findWord("The quick brown fox", "fox");
+
+console.log(findTheWord);
+
+
+/* 9. Write a function to hide email address.
+"myemailaddress@bgit.rs" -> "mye...@bgit.rs" */
+
+function hideEmailAddress(email) {
+    
+    var hiddenMail = "";
+
+    for (i = 0; i < email.length; i++) {
+    
+        if (i > 2 && i< email.indexOf("@") ) {
+        
+            hiddenMail += "*";
+      
+        } else {
+        
+            hiddenMail += email[i];
+      
+        }
+    
+    }
+    
+    return hiddenMail;
+}
+
+var hideEmail= hideEmailAddress("superstar@gmail.com");
+
+console.log(hideEmail)
+
+
+/** 10. Write a program to find the most frequent item of an array.
+[3, "a", "a", "a", 2, 3, "a", 3, "a", 2, 4, 9, 3]*/
+
+function findTheMostFrequentItem(array) {
+    
+    var number = 1; 
+    
+    var frequency = 0; 
+    
+    var element;
+  
+    for (var i = 0; i < array.length; i++) {
+      
+        for (var j = i; j < array.length; j++) {
+        
+            if (array[i] === array[j]) {
+          
+                frequency++;
+        
+            }
+        
+            if (number < frequency) {
+          
+                number = frequency;
+          
+                element = array[i];
+        }
+      }
+      
+      frequency = 0;
+    
+    }
+    
+    return element;
+  
+}
+  
+  var theMostFrequent = findTheMostFrequentItem([3, "a", "a", "a", 2, 3, "a", 3, "a", 2, 4, 9, 3]);
+  
+  console.log(theMostFrequent);
