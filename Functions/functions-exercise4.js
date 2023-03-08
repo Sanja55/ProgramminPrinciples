@@ -106,7 +106,7 @@ function findTheSecondMinimum (justAnotherArray) {
         }
     }
 
-    return firstMinimum + ", " + secondMinimum;
+    return secondMinimum;
 }
 
 
@@ -160,9 +160,10 @@ function checkIfTheArrayIsSymetric(array) {
     return "The given array is not symmetric."
 }
 
-var isArraySymmetric = checkIfTheArrayIsSymetric ([3, 4, 12, 8]);
+var isArraySymmetric = checkIfTheArrayIsSymetric ([2, 4, -2, 7, -2, 4, 2]);
 
 console.log(isArraySymmetric);
+
 
 /**7. Write a program that intertwines two arrays. You can assume the arrays are of the same
 length.
@@ -196,11 +197,9 @@ function concatenateArrays(primaryArray, secondaryArray) {
 
     var concatenatedArray = [];
 
-    for (var i = 0, j = 0; i < primaryArray.length && i < secondaryArray.length; i++) {
+    for (var i = 0, j = 0; i < primaryArray.length - 1 && j < secondaryArray.length - 1; i++, j++) {
 
-        concatenatedArray[concatenatedArray.length] = primaryArray[i];
-
-        concatenatedArray[concatenatedArray.length] = secondaryArray[i];
+       concatenatedArray = primaryArray + ", " + secondaryArray;
     }
     
     return concatenatedArray;
