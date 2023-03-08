@@ -124,7 +124,7 @@ function displayStudentNameWithGrade(studentNames, studentGrades) {
     return marks;
 }
 
-var studentGradeMark = displayStudentNameWithGrade ([ "Micahel", "Anne", "Frank", "Joe", "John", "David", "Mark", "Bill" ], [ 50, 39, 63, 72, 99,
+var studentGradeMark = displayStudentNameWithGrade ([ "Michael", "Anne", "Frank", "Joe", "John", "David", "Mark", "Bill" ], [ 50, 39, 63, 72, 99,
     51, 83, 59 ] );
 
 console.log(studentGradeMark);
@@ -144,23 +144,6 @@ console.
 Input: [ 13, 11, 15, 5, 6, 1, 8, 12 ]
 Output: [ 15, 13, 12, 11, 8, 6, 5, 1 ] */
 
-/*function sortTheArrayInDescendingOrder(randomArray) {
-
-    var sortedArray = [];
-
-    var descendingArray = [];
-
-    for (var i = 0; i < randomArray.length; i++) {
-
-        
-    }
-   
-    return sortedArray;
-}
-
-var descendingOrder = sortTheArrayInDescendingOrder ([ 13, 11, 15, 5, 6, 1, 8, 12 ]);
-
-console.log(descendingOrder);
 
 
 /**6. Write a program that uses a loop to add all the even numbers from 1 to 1000 and
@@ -259,33 +242,31 @@ console.log(reversingTheString);
 Don't display two of the same numbers at the same time. Display the number of possible
 combinations, as well. (E.g. (1.2),(2,1) is allowed, but not (1,1), (2,2)...). */
 
-function displayTheCombinationOfTwoNumbers (arrayOfNumbers) {
+function displayTheCombinationOfTwoNumbers () {
    
+    var twoNumberCombination = "";
 
-    for (var i = 0; i < arrayOfNumbers.length; i++) {
-        for (var j = arrayOfNumbers.length-1; j > -1; j--) {
-            if (arrayOfNumbers[i] !== arrayOfNumbers[j]) {
-                var combinationOfTwoNumbers = [];
-                
-                var elementOne = arrayOfNumbers[i];
-                
-                var elementTwo = arrayOfNumbers[j];
-                
-                combinationOfTwoNumbers += elementOne;
-                combinationOfTwoNumbers += elementTwo;
+    for(var i = 1; i <= 7; i++) {
+        
+        for(var j = 1; j <= 7; j++) {
 
-            }   
+            if(i !== j) {
+
+                twoNumberCombination += "(" + i + ", " + j + ")" + " ";
+            
+            }
+        
         }
-       
+    
     }
 
-    return combinationOfTwoNumbers;
+    return twoNumberCombination;
 
 }
 
-var combinations = displayTheCombinationOfTwoNumbers([1, 2, 3, 4, 5, 6, 7]);
+var combination = displayTheCombinationOfTwoNumbers();
 
-console.log(combinations);
+console.log(combination);
 
 
 /**10. Write a program that checks if the entered number is a prime number (i.e. divisible only
@@ -307,7 +288,7 @@ function numberIsPrime(number) {
 
 }
 
-var primeNumber = numberIsPrime(15);
+var primeNumber = numberIsPrime(13);
 
 
 console.log(primeNumber);
