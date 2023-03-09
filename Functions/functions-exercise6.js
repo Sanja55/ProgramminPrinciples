@@ -234,8 +234,38 @@ console.log(median);
 
 //10. Write a function to find the element that occurs most frequently.
 
+function findTheMostFrequentElement(array) {
+    
+    var element = 0; 
+    var mostFrequent = 0; 
+    var result = 0;
+    
+    for (var i = 0; i < array.length; i++) {
+        
+        for (var j = 0; j < array.length; j++) {
+            
+            if (array[i] === array[j]) {
+                
+                element++
+            }
+            
+            if (mostFrequent < element) {
+                
+                mostFrequent = element;
+                
+                result = array[i];
+            }
+        
+        }
+    
+    }
+    
+    return result;
+}
 
+var theMostFrequentElement = findTheMostFrequentElement([1, 2, 6, 8, 3, 2, 9, 2]);
 
+console.log(theMostFrequentElement)
 
 
 /**11. Write a function to find and return the first, middle and last element of an array if the array
@@ -272,6 +302,7 @@ function findAndReturnFirstMiddleLastElement (array) {
 var firstMiddleLast = findAndReturnFirstMiddleLastElement ([9, 5, 6, 7, 3, 5, 7, 8, 10]);
 
 console.log(firstMiddleLast);
+
 
 /** Task 12. Write a function to find the average of N elements. Make the function flexible to receive
 dynamic number or parameters. */
