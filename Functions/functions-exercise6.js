@@ -48,47 +48,39 @@ console.log(combiningTheArrays);
 /**3. Write a function that rotates a list by k elements.
 For example [1,2,3,4,5,6] rotated by two becomes [3,4,5,6,1,2] */
 
-/*function listRotation(listToRotate, rotation) {
-
-    'use strict'
-
+function listRotation(array, rotation) {
+    
     var rotatedArray = [];
-
-    var rotatedArray2 = [];
-
-    var finalArray = [];
-
-    for (var i = 0; i < listToRotate.length; i++) {
-
-        if (i > rotation - 1) {
-
-            listToRotate[rotation-1] += rotatedArray[0];
-
-            rotatedArray += listToRotate[i];
-
+    
+    var i;
+    
+    var j;
+    
+    for (i = rotation, j = rotation - array.length; i < array.length + rotation; i++, j++) {
+        
+        if (array[i] !== undefined) {
+            
+            rotatedArray[rotatedArray.length] = array[i];
+        
+        } else {
+            
+            rotatedArray[rotatedArray.length] = array[j];
+        
         }
-
-        if (i < rotation - 1) {
-
-            rotatedArray2 += listToRotate[i];
-        }
-
-    }
-
-    finalArray += rotatedArray[i] + rotatedArray2[i];
-
-    for (var j = 0; j < finalArray.length; j++) {
-
-        rotatedArray[rotatedArray.length] = finalArray[j];
-    }
-
+    
+    }    
+    
     return rotatedArray;
 
-}
-console.log(listRotation([1, 2, 3, 4, 5, 6], 3));*/
+} 
+    
+var rotate = listRotation([1, 2, 3, 4, 5, 6], 2);
+
+console.log(rotate)
 
 
 /**4. Write a function that takes a number and returns array of its digits. */
+
 
 function  numberToArrayOfDigits(number) {
 
@@ -117,7 +109,6 @@ console.log(numberOfDigits);
 
 function printMultiplicationTable() {
 
-    "use strict"
 
     var table = "";
 
