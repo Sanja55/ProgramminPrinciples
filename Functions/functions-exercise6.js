@@ -429,6 +429,80 @@ printed as:
 */
 
 
+var convert = function(array) {
+    
+    var counter = 0; 
+    var newArray = []; 
+    var testArray = [];
+    
+    newArray[0] = "";
+    
+    for (var i = 0; i < array.length; i++) {
+      
+        if (array[i] === " " || array[i] === ",") {
+        
+            counter++;
+        
+            newArray[counter] = "";
+      
+        } else {
+        
+            newArray[counter] += array[i];
+        
+        }
+    }
+    
+    for (var i = 0; i < newArray.length; i++) {
+      
+        if (newArray[i] === "") continue;
+      
+        testArray[testArray.length] = newArray[i];
+    }
+    
+    return testArray;
+
+}
+  
+function generate(text) {
+    
+    var side = "* ";
+    
+    for (var i = 0; i < text; i++) {
+      
+        side += "*";
+    
+    }
+    
+    side += " *\n";
+    
+    return side;
+}
+  
+var frameText = function (string) {
+  var i, j, length, text, word = "* ", element;
+    text = typeof string === "string" ? convertStringToArr(string) : string;
+    length = text.length - 1;
+   
+    var line = generate(text.length);
+        for (i = 0; i < text.length; i++) {
+            for (j = 0; j < text.length; j++) {
+                element = typeof text[i][j] === "undefined" ?  " " : text[i][j];
+                word += element;
+                if (j === length) {
+                    word += " *\n";
+                    if (i === length && j === length) {
+                        word += "";
+                    } else {
+                        word += "* ";
+                    }
+                }
+            }
+        }
+    return line + word + line;
+}
+
+var d = frameText(["Hello", "World", "in", "a", "frame"]);
+console.log(d)
 
 
 

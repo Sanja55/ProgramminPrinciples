@@ -78,7 +78,7 @@ Output: pera.peric@gmail.com */
         console.log(name + "." + surname + "@gmail.com"); 
     }
     
-}) ("Sanja", "Randjelovic") (); 
+}) ("sanja", "randjelovic") (); 
 
 
 /**5. Write a function that returns a function that calculates a decimal value of the given octal
@@ -127,7 +127,7 @@ Output: Your password is cool! */
 
     return errorCallback();
     
-}) ("JSGuru123", function () { console.log("Your password is cool")}, function ()  { console.log("Your password is invalid!");}) 
+}) ("JSGuru123", function () { console.log("Your password is cool!")}, function ()  { console.log("Your password is invalid!");}) 
 
 
 /**7. Write a function that filters elements of the given array so that they satisfy a condition
